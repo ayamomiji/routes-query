@@ -8,6 +8,10 @@ Install
 
 Just download the rake task file and move it to `lib/tasks/`.
 
+or:
+
+    curl https://github.com/ayamomiji/routes-query/raw/master/routes-query.rake > lib/tasks/routes-query.rake
+
 Example
 -------
 
