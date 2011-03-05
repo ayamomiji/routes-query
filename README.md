@@ -37,28 +37,28 @@ When I run `rake routes:query Q=com` (or `rake rq Q=com`)
 
 Then it responds these:
 
-        board_post_comments GET    /boards/:board_id/posts/:post_id/comments(.:format)          {:action=>"index", :controller=>"comments"}
-        board_post_comments POST   /boards/:board_id/posts/:post_id/comments(.:format)          {:action=>"create", :controller=>"comments"}
-     new_board_post_comment GET    /boards/:board_id/posts/:post_id/comments/new(.:format)      {:action=>"new", :controller=>"comments"}
-    edit_board_post_comment GET    /boards/:board_id/posts/:post_id/comments/:id/edit(.:format) {:action=>"edit", :controller=>"comments"}
-         board_post_comment GET    /boards/:board_id/posts/:post_id/comments/:id(.:format)      {:action=>"show", :controller=>"comments"}
-         board_post_comment PUT    /boards/:board_id/posts/:post_id/comments/:id(.:format)      {:action=>"update", :controller=>"comments"}
-         board_post_comment DELETE /boards/:board_id/posts/:post_id/comments/:id(.:format)      {:action=>"destroy", :controller=>"comments"}
-          announce_comments GET    /announces/:announce_id/comments(.:format)                   {:action=>"index", :controller=>"comments"}
-          announce_comments POST   /announces/:announce_id/comments(.:format)                   {:action=>"create", :controller=>"comments"}
-       new_announce_comment GET    /announces/:announce_id/comments/new(.:format)               {:action=>"new", :controller=>"comments"}
-      edit_announce_comment GET    /announces/:announce_id/comments/:id/edit(.:format)          {:action=>"edit", :controller=>"comments"}
-           announce_comment GET    /announces/:announce_id/comments/:id(.:format)               {:action=>"show", :controller=>"comments"}
-           announce_comment PUT    /announces/:announce_id/comments/:id(.:format)               {:action=>"update", :controller=>"comments"}
-           announce_comment DELETE /announces/:announce_id/comments/:id(.:format)               {:action=>"destroy", :controller=>"comments"}
+        board_post_comments GET    /boards/:board_id/posts/:post_id/comments(.:format)          C: comments, A: index
+        board_post_comments POST   /boards/:board_id/posts/:post_id/comments(.:format)          C: comments, A: create
+     new_board_post_comment GET    /boards/:board_id/posts/:post_id/comments/new(.:format)      C: comments, A: new
+    edit_board_post_comment GET    /boards/:board_id/posts/:post_id/comments/:id/edit(.:format) C: comments, A: edit
+         board_post_comment GET    /boards/:board_id/posts/:post_id/comments/:id(.:format)      C: comments, A: show
+         board_post_comment PUT    /boards/:board_id/posts/:post_id/comments/:id(.:format)      C: comments, A: update
+         board_post_comment DELETE /boards/:board_id/posts/:post_id/comments/:id(.:format)      C: comments, A: destroy
+          announce_comments GET    /announces/:announce_id/comments(.:format)                   C: comments, A: index
+          announce_comments POST   /announces/:announce_id/comments(.:format)                   C: comments, A: create
+       new_announce_comment GET    /announces/:announce_id/comments/new(.:format)               C: comments, A: new
+      edit_announce_comment GET    /announces/:announce_id/comments/:id/edit(.:format)          C: comments, A: edit
+           announce_comment GET    /announces/:announce_id/comments/:id(.:format)               C: comments, A: show
+           announce_comment PUT    /announces/:announce_id/comments/:id(.:format)               C: comments, A: update
+           announce_comment DELETE /announces/:announce_id/comments/:id(.:format)               C: comments, A: destroy
 
 When I run `rake routes:query C=p A=c`
 
 Then it responds these:
 
-               profile POST /profile(.:format)                       {:action=>"create", :controller=>"profiles"}
-    search_board_posts GET  /boards/:board_id/posts/search(.:format) {:action=>"search", :controller=>"posts"}
-           board_posts POST /boards/:board_id/posts(.:format)        {:action=>"create", :controller=>"posts"}
+               profile POST /profile(.:format)                       C: profiles, A: create
+    search_board_posts GET  /boards/:board_id/posts/search(.:format) C: posts, A: search
+           board_posts POST /boards/:board_id/posts(.:format)        C: posts, A: create
 
 
 Then it responds these:
