@@ -55,8 +55,8 @@ namespace :routes do
 
       reqs = reqs.empty? ? "" : reqs.map { |k, v| "#{k}: #{v}" }.join(', ')
 
-      route_name = route.name.to_s
-      route_name = path_to_name[route.path] if route_name.blank?
+      route_name = route.name.to_s    
+      route_name = path_to_name[route.path] || '(none)' if route_name.blank?
 
       {:name => route_name, :verb => route.verb.to_s, :path => route.path, :reqs => reqs}
     end
