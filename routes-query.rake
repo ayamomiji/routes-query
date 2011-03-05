@@ -42,7 +42,18 @@ namespace :routes do
 
       reqs = route.requirements.dup
       reqs[:to] = route.app unless route.app.class.name.to_s =~ /^ActionDispatch::Routing/
-      reqs = reqs.empty? ? "" : reqs.inspect
+
+      if reqs[:controller]
+        reqs[:C] = reqs[:controller]    
+        reqs.delete :controller
+      end
+
+      if reqs[:action]
+        reqs[:A] = reqs[:action]        
+        reqs.delete :action
+      end
+
+      reqs = reqs.empty? ? "" : reqs.map { |k, v| "#{k}: #{v}" }.join(', ')
 
       route_name = route.name.to_s
       route_name = path_to_name[route.path] if route_name.blank?
