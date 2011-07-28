@@ -3,6 +3,8 @@ Routes Query
 
 Provides a rake task to query Rails routes easier.
 
+Support Rails 3.0, 3.1
+
 Install
 -------
 
@@ -33,7 +35,7 @@ Given a routes.rb like this:
 
     root :to => 'main#index'
 
-When I run `rake routes:query Q=com` (or `rake rq Q=com`)
+When I run `rake routes:query Q=com` (or `rake rq Q=com`, `rake routes:query[com]`, `rake rq[com]`)
 
 Then it responds these:
 
@@ -59,8 +61,5 @@ Then it responds these:
                profile POST /profile(.:format)                       C: profiles, A: create
     search_board_posts GET  /boards/:board_id/posts/search(.:format) C: posts, A: search
            board_posts POST /boards/:board_id/posts(.:format)        C: posts, A: create
-
-
-Then it responds these:
 
 You can use Q for match anything, C for match controllers, A for match actions, P for match paths, N for match names (helpers),
